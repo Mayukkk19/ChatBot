@@ -162,15 +162,6 @@ button i{
     background: #bcbdc0;
     border-radius: 10px;
 }
-@media(max-width: 490px) {
-  .container {
-      right: 0;
-      bottom: 0;
-      height: 100%;
-      width: 100%;
-      border-radius: 0;
-  }
-}
 
 /* 🌟 Chatbot Wrapper (Fades in on Load) */
 .chatbot-container {
@@ -410,42 +401,59 @@ button i{
   margin-left: 10px;
 }
 
-/* Media Query for Small Screens */
-@media (max-width: 600px) {
+/* 🌐 RESPONSIVE FIX: Ensure stable layout across devices */
+@media only screen and (max-width: 768px) {
   .container {
-    margin: 20px 10px;
-    border-radius: 10px;
+    width: 90%;
+    margin: 20px auto;
     padding: 15px;
+    border-radius: 12px;
   }
 
   .chat {
     height: 50vh;
     max-height: none;
+    padding: 8px;
+  }
+
+  .text {
+    font-size: 14px;
+    padding: 8px;
   }
 
   .input {
-    width: calc(100% - 90px);
     font-size: 16px;
+    padding: 10px;
+    width: calc(100% - 90px);
+    display: inline-block;
   }
 
   .button {
     width: 80px;
     font-size: 16px;
+    margin-left: 5px;
   }
 
   .title {
     font-size: 20px;
   }
 
-  .text {
-    font-size: 14px;
-  }
-
   .avatar {
     width: 30px;
     height: 30px;
   }
+
+  .chatbot-container {
+    width: 95%;
+    bottom: 10px;
+    right: 10px;
+  }
 }
 
+@media only screen and (min-width: 769px) and (max-width: 1200px) {
+  .container {
+    width: 80%;
+    padding: 20px;
+  }
 
-
+  .
