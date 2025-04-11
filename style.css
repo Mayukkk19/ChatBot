@@ -114,40 +114,40 @@
       to { width: 100%; }
   }
   
-.input-area {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  box-sizing: border-box;
-  gap: 10px;
-}
+  .input {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #cbcbce;
+    border-radius: 5px;
+    outline: none;
+    font-size: 20px;
+   
+  }
 
-input[type="text"] {
-  flex: 1;
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  outline: none;
-}
+  .input:focus {
+    border-color: #8296d0;
+    color: #141414;
+  }
 
-button.send {
-  background-color: #6c47ff;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  .button {
+    position: absolute;
+    width: 80px;
+    border: none;
+    padding: 1px;
+    background: #603dca;
+    color: rgb(246, 242, 242);
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: .01rem;
+    margin-left: -4.1rem;
+    outline: none;
+  
+  }
+button i{
+  font-size: 3rem;
 }
-
-button.send:hover {
-  background-color: #5439cc;
-}
-
 
   
 
