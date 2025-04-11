@@ -373,4 +373,79 @@ button i{
   transform: scale(1.05);
 }
 
+/* General Responsive Layout */
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: #fffeff 0px 7px 29px 0px;
+  background: #673af0;
+  box-sizing: border-box;
+}
+
+/* Chat Section - Flexible Height */
+.chat {
+  height: 60vh;
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 20px 0;
+  padding: 10px;
+  border: 2px solid #545250;
+  border-radius: 5px;
+  background: #fff;
+}
+
+/* Button and Input Layout Fix */
+.input {
+  width: calc(100% - 90px);
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.button {
+  width: 80px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 600px) {
+  .container {
+    margin: 20px 10px;
+    border-radius: 10px;
+    padding: 15px;
+  }
+
+  .chat {
+    height: 50vh;
+    max-height: none;
+  }
+
+  .input {
+    width: calc(100% - 90px);
+    font-size: 16px;
+  }
+
+  .button {
+    width: 80px;
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
 
