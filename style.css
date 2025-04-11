@@ -1,0 +1,376 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+  }
+
+  .container {
+    width: 500px;
+    height: auto;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: #fffeff 0px 7px 29px 0px;
+    background:#673af0;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #edf1f3;
+  }
+
+  .chat {
+    height: 400px;
+    overflow-y: scroll;
+    margin: 20px 0;
+    padding: 10px;
+    border: 2px solid #545250;
+    border-radius: 5px;
+    background: #fff;
+  }
+  .chat img {
+    width: 20px;
+
+  }
+
+  .message {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  .user {
+    justify-content: flex-end;
+  }
+
+  .bot {
+    justify-content: flex-start;
+    
+  }
+
+  .avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin: 0 10px;
+  }
+
+  .user .avatar {
+    order: 2;
+    background: url("avatar.jpg");
+    background-size: cover;
+  }
+
+  .bot .avatar {
+    order: 1;
+    background: url("bot.png");
+    background-size: cover;
+  }
+
+  .text {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+  }
+
+  .user .text {
+    background: #3b1cc5;
+  }
+
+  .bot .text  {
+    background: #cfcfd2;
+  }
+  .chat p {
+    background: #cfcfd2;
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+
+    /*new effect */
+    
+      opacity: 0;
+      animation: fadeIn 1.5s forwards, typing 2s steps(22) forwards;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid transparent;
+  }
+  
+  @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+  }
+  
+  @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+  }
+  
+
+
+  .input {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #cbcbce;
+    border-radius: 5px;
+    outline: none;
+    font-size: 20px;
+   
+  }
+
+  .input:focus {
+    border-color: #8296d0;
+    color: #141414;
+  }
+
+  .button {
+    position: absolute;
+    width: 80px;
+    border: none;
+    padding: 1px;
+    background: #603dca;
+    color: rgb(246, 242, 242);
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: .01rem;
+    margin-left: -4.1rem;
+    outline: none;
+  
+  }
+button i{
+  font-size: 3rem;
+}
+  .button:hover {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .chat::-webkit-scrollbar {
+    width: 10px;
+}
+
+.chat::-webkit-scrollbar-thumb {
+    background: #bcbdc0;
+    border-radius: 10px;
+}
+@media(max-width: 490px) {
+  .container {
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: 0;
+  }
+}
+
+/* 🌟 Chatbot Wrapper (Fades in on Load) */
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transform: scale(0.9);
+  opacity: 0;
+  animation: fadeInScale 0.8s ease-in-out forwards;
+}
+
+/* 🔵 Chatbot Header (Floating Effect) */
+.chatbot-header {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 12px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  animation: float 3s infinite ease-in-out;
+}
+
+/* 💬 Chat Messages (Slide in Effect) */
+.chat-message {
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 8px;
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+/* 🎭 Message Animation */
+@keyframes slideIn {
+  0% { transform: translateX(50px); opacity: 0; }
+  100% { transform: translateX(0px); opacity: 1; }
+}
+
+/* 🔄 Input Field with Glow Effect */
+.chatbot-input {
+  width: calc(100% - 20px);
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🟣 Input Focus Effect */
+.chatbot-input:focus {
+  border-color: #764ba2;
+  box-shadow: 0 0 10px rgba(118, 75, 162, 0.3);
+}
+
+/* ✨ Chatbot Button */
+.chatbot-send {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+/* 🟡 Button Hover Effect */
+.chatbot-send:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 10px 20px rgba(118, 75, 162, 0.4);
+}
+
+/* 🎭 Fade In & Scale Animation */
+@keyframes fadeInScale {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* 🔁 Floating Header Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+/* 🌟 Apply Only to Login & Registration Pages */
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* 🟢 Container Animation */
+.auth-container {
+  width: 350px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transform: scale(0.9);
+  opacity: 0;
+  animation: fadeInScale 0.8s ease-in-out forwards;
+}
+
+/* 🔄 Input Fields with Animation */
+.auth-container input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  margin: 8px 0;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🟣 Input Focus Effect */
+.auth-container input:focus {
+  border-color: #764ba2;
+  box-shadow: 0 0 10px rgba(118, 75, 162, 0.3);
+}
+
+/* ✨ Button Animation */
+.auth-container button {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: rgb(248, 248, 248);
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+/* 🟡 Button Hover Effect */
+.auth-container button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 10px 20px rgba(118, 75, 162, 0.4);
+}
+
+/* 🎭 Fade In & Scale Animation */
+@keyframes fadeInScale {
+  0% {
+      transform: scale(0.8);
+      opacity: 0;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+/* 🔁 Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* 🌊 Animated Title */
+.auth-container h2 {
+  font-size: 24px;
+  color: #764ba2;
+  animation: float 3s infinite ease-in-out;
+}
+
+
+
+
+
+
+
+.logout {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  margin: 20px auto; /* Centers the button */
+}
+
+.logout:hover {
+  background-color: #5143ec; /* Darker red on hover */
+  transform: scale(1.05);
+}
+
+
